@@ -1,3 +1,3 @@
-#Python Crash Course: Chapter 1, Eric Matthews
-
-print("Hello Python world!")
+#Python Crash Course: Chapter 2, Eric Matthews, Variables
+message = "Hello Python world!"
+print(message)
