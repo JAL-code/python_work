@@ -1,7 +1,7 @@
 #Python Crash Course, Eric Matthes, Chapter 3,
 #Custom favorite list
 
-motorbike = ['Honda, Yamaha and Suzuki', 'CX500', 'CB500', 'GT750', 'Harley', 'GL500', 'Indian Scout']
+motorbike = ['Honda, Yamaha and Suzuki', 'CX500', 'CB500', 'GT750', 'Harley', 'GL500', 'Indian Scout Sixty']
 print(f"The days of cheap {motorbike[0]} bikes.")
 print(f"That clunker {motorbike[1]} that never worked.")
 print(f"That first {motorbike[2]} that taught me my cycling ropes.")
