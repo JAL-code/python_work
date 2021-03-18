@@ -6,3 +6,10 @@ bicycles = ['trek', 'cannondale', 'redline', 'specialized']
 print(bicycles)
 print(bicycles[0])  #first bicyle in the list  is trek.
 print(bicycles[0].title()) #as a noun
+
+#getting other items
+print(bicycles[1].title()) #2nd item
+print(bicycles[3].title()) #4th item
+
+#print the last element in the row with the end position to it's right
+print(bicycles[-1].title())
