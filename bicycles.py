@@ -13,3 +13,8 @@ print(bicycles[3].title()) #4th item
 
 #print the last element in the row with the end position to it's right
 print(bicycles[-1].title())
+
+#Reference the list items in a string.
+message = f"My first bicycle was a {bicycles[0].title()}."
+
+print(message)
