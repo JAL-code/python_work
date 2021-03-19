@@ -3,7 +3,7 @@
 # . . . Look, that rabbit's got a vicious streak a mile wide! It's a killer!
 import this
 
-#Now, you siblings of King Arthur, go slay the Beast!
+#Now, you siblings of King Arthur, assist his squire, Patsy, and go slay the Beast!
 #.....
 
 #Beautiful is better than ugly.
