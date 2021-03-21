@@ -4,3 +4,5 @@ In Alien Invasion, the player controls a rocket ship that appears at the bottom 
 
 Requirements:  pygame  
 Terminal: python3 -m pip install --user pygame
+
+Run at terminal: python3 alien_invasion.py (version 1.0)
