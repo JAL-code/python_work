@@ -1,5 +1,5 @@
 # python_work
-Building all coursework from Python Crash Course by Eric Matthes.  Also this repository is develops skills of GitHub capabilities.
+Building all coursework from Python Crash Course by Eric Matthes.  Also, this repository develops GitHub skills.
 
 All historys of each file will be:
 
