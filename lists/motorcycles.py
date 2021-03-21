@@ -28,3 +28,19 @@ print(f"Delete first item: {motorcycles}.")
 
 del motorcycles[1]
 print(f"Cut out the middle man: {motorcycles}.")
+
+#Create another list
+motorcycles =['honda', 'yamaha', 'suzuki', 'ducati']
+print(motorcycles)
+
+#Remove the item without knowing the position
+motorcycles.remove('ducati')
+print(motorcycles)
+
+motorcycles.append('ducati')
+
+too_expensive = 'ducati'
+
+motorcycles.remove(too_expensive)
+print(motorcycles)
+print(f"\nA {too_expensive.title()} is too expensive for me.")
