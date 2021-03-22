@@ -13,7 +13,7 @@ class AlienInvasion:
     pygame.init()
     # Init an instance of the Settings
     self.settings = Settings()
- 
+
     self.screen = pygame.display.set_mode(
       (self.settings.screen_width, self.settings.screen_height))
 
@@ -25,17 +25,26 @@ class AlienInvasion:
 
     self.ship = Ship(self)
 
+
+
   def run_game(self):
     """Start the main loop for  the game."""
     while True:
       # Watch for keyboard and mouse events.
-      for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-          sys.exit()
+      self._check_events()
+      self._update_screen()
 
-      # Redraw the screen during each pass throught the loop
-      self.screen.fill(self.settings.bg_color)
-      self.ship.blitme()
+  def _check_events(self):
+    """Helper method: Respond to keypresses and mouse events."""
+    for event in pygame.event.get():
+      if event.type == pygame.QUIT:
+        sys.exit()
+
+  def _update_screen(self)
+    """Helper method: Update images on the screen,flip to the next screen
+    # Redraw the screen during each pass throught the loop
+    self.screen.fill(self.settings.bg_color)
+    self.ship.blitme()
 
       # Make the most recently drawn screen visible.
       pygame.display.flip()
