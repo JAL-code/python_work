@@ -25,3 +25,10 @@ import this
 #If the implementation is hard to explain, it's a bad idea.
 #If the implementation is easy to explain, it may be a good idea.
 #Namespaces are one honking great idea -- let's do more of those!
+
+# Styles notes - chapter 4
+# PEP 8 - Style guide.
+# four space indent
+# don't mix tabs and spaces.
+# limit characters to 79 per line (72 to 99)
+# blank lines group your code.
