@@ -15,3 +15,7 @@ print(players[2:]) #subtract 1 from desired index.
 # 0  1  2  3  4  5  6
 # -6 -5 -4 -3 -2 -1 0
 print(players[-3:])
+
+# Looping through a slice.  Replace the pural group with the slice syntax.
+for player in players[:3]:
+    print(player.title())
