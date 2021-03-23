@@ -8,8 +8,13 @@ print(message)
 
 # This code runs from Visio Studio Code
 # This code does not run from Atom
-# This code runs from Python terminal:
+# This code runs from IDLE Python terminal:
 #  1. import os
 #  2. chd = os.chdir('C:/User/[username]/GitHub/python_work/user_input_while_loops')
 #  3. import parrot
 #  4. code runs in python terminal
+# Linux Mint
+# Does not work: Atom, Sublime Text, nano (Terminal)
+# Terminal without bash: python3 parrot.py
+# Mu: it works!
+#
