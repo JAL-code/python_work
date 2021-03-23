@@ -5,6 +5,9 @@
 alien_0 = {'color': 'green', 'speed': 'slow'}
 # print(alien_0['points']) -> KeyError: 'points'
 
-#instead use get to pass alternate argument if key not found
+# instead use get to pass alternate argument if key not found
 point_value = alien_0.get('points', 'No point value assigned.') 
 print(point_value)
+# leaving out second argument returns None.
+point_value = alien_0.get('points', ) 
+print(point_value)  # <-- prints None value
