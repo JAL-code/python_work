@@ -32,3 +32,6 @@ import this
 # don't mix tabs and spaces.
 # limit characters to 79 per line (72 to 99)
 # blank lines group your code.
+
+# to break long lines of text: break the text. add new line.
+# indent if necessary. continue string. Repeat if longer than x-num/lines.
