@@ -1,7 +1,18 @@
-git rm apostrophe.py  assign_multiple_numbers_one_line.py bicycles.py famous_quote_cp2.py favorite_languages.py favorite_list_cp3.py fibonacci_hw.py float.py floats_and_integers.py full_name.py greetings_cp3.py hello_world.py integer.py max_connections.py name.py name_case_cp2.py names_chapter3.py personal_message_cp2.py simple_message_1.py simple_message_2.py stripping_names_cp2.py underscore_numbers.py
+On branch main
+Your branch is up to date with 'origin/main'.
 
-git add HelloWorld/fibonacci_hw.py	HelloWorld/hello_world.py	HelloWorld/name.py	lists/bicycles.py	variables/apostrophe.py	variables/assign_multiple_numbers_one_line.py	variables/famous_quote_cp2.py	variables/favorite_languages.py	variables/favorite_list_cp3.py	variables/float.py
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   current_update.txt
 
-git add variables/floats_and_integers.py	variables/full_name.py	variables/greetings_cp3.py	variables/integer.py	variables/max_connections.py	variables/name_case_cp2.py	variables/names_chapter3.py	variables/personal_message_cp2.py	variables/simple_message_1.py	variables/simple_message_2.py	variables/stripping_names_cp2.py	variables/underscore_numbers.py
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	user_input_while_loops/cities.py
+	user_input_while_loops/confirmed_users.py
+	user_input_while_loops/counting_cont.py
+	user_input_while_loops/mountain_poll.py
+	user_input_while_loops/output.txt
+	user_input_while_loops/pet.py
 
-current_update.txt 
+no changes added to commit (use "git add" and/or "git commit -a")
