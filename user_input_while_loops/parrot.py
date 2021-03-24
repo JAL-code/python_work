@@ -1,4 +1,4 @@
-# Python Crash Course: Chapter 5, Eric Matthews, Dictionaries
+# Python Crash Course: Chapter 5, Eric Matthews, User Input and while loops
 # Windows 10
 
 # the input function recieves text as a string
