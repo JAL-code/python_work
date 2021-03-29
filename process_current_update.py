@@ -12,82 +12,60 @@ import sys
 txt_file_location = sys.argv[1]
 modified = []
 add = []
-start = ''
-end = ''
-lines = ''
 
-def clear_SE():
-    start = ''
-    end = ''
-
-#def get_files():
-
-def check_modified(lines):
-    ch_mod = False
-    print("Running modified.")
+# Find the line indicating change must be updated to the repo.
+def find_start(lines, pattern):
+    ch_recorded = False
     line_Count = 0
 
     for line in lines:
-        # print(f"CM: {line}")
-        pattern = r"Changes not staged for commit:"
         result = re.search(pattern, line)
-        # print(f"CM Result: {result}")
         if result is None:
             line_Count += 1
             continue
         else:
-            print(f"CM: {result} @ line {line_Count}")
-            ch_mod = True
+            ch_recorded = True
             break
+    return line_Count, ch_recorded
+
+# Look for modified files
+def check_modified(lines):
+    print("Running modified.")
+    pattern = r"Changes not staged for commit:"
+    limit_pattern = r"modified:   "
+    line_Count, ch_mod = find_start(lines, pattern)
 
     for line in lines[line_Count+1:]:
         if re.search("^[A-Z]", line):
             break
         else:
-            print(f"Test Line 1 {line}")
             if re.search(r"^\t", line):
-                print("\tThis line is added to modified list.")
-                modified.append(re.sub(r"modified:   ", '', re.sub(r"\t",'', line)))
-    print(add)
-
+                modified.append(re.sub(limit_pattern, '', re.sub(r"\t",'', line)))
     return ch_mod
 
+# Look for new files
 def check_first_add(lines):
     ch_Untrack = False
     print("Running untracked")
-    line_Count = 0
-
-    for line in lines:
-        # print(f"CFM {line}")
-        pattern = r"Untracked files:"
-        result = re.search(pattern, line)
-        # print(f"CFM Result: {result}")
-        if result is None:
-            line_Count += 1
-            continue
-        else:
-            print(f"CFA: {result} @ line {line_Count}")
-            ch_Untrack = True
-            break
+    pattern = r"Untracked files:"
+    line_Count, ch_Untrack = find_start(lines, pattern)
 
     for line in lines[line_Count+1:]:
         if re.search("^[A-Z]", line):
             break
         else:
             if re.search(r"^\t", line):
-                print(f"Test Line 2 {line}")
-                print("This new item needs to be tracked.")
                 add.append(re.sub(r"\t", '', line))
-    print(modified)
 
     return ch_Untrack
 
+# Create the git command
 def create_command(action, list_item):
     output = f"git {action} "
-    print(f"Test list: {list_item}")
     output2 = ' '.join(list_item)
     return f"{output} {output2}"
 
+# Open the file and process which files need to be updated to the repo.
 def main(txt_file_location):
     print("Running Main")
     # Open the current_update.txt file
@@ -97,35 +75,37 @@ def main(txt_file_location):
         return None
     lines = file.readlines()
     lines.remove('\n')
-    print(lines)
+    #print(lines)
     count = 0
     for line in lines:
-        print(line)
+        #print(line)
         line_r = re.sub(r"\n", "", line)
         lines[count] = line_r
         count += 1
-        print(line)
+        #print(line)
     # print(lines)
     file.close()
-
+    # The checks to be made.
     checks = [
         (check_modified, "Modified Files found"),
         (check_first_add, "Found files to be added"),
     ]
 
+    # Run the checks
     everything_ok = True
     for check, msg in checks:
         if check(lines):
             print(msg)
             everything_ok = False
 
+    # Print out the results
     if not everything_ok:
         print("Work to be done!")
         if modified:
-            print(f"These were modified: {modified}")
+            #print(f"These were modified: {modified}")
             print(create_command('add', modified))
         if add:
-            print(f"These are new files: {add}")
+            #print(f"These are new files: {add}")
             print(create_command('add', add))
     else:
         print("No GitHub updates to be pushed")
