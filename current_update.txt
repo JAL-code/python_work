@@ -1,15 +1,15 @@
 On branch main
-Your branch is ahead of 'origin/main' by 4 commits.
+Your branch is ahead of 'origin/main' by 2 commits.
   (use "git push" to publish your local commits)
 
 Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
   (use "git restore <file>..." to discard changes in working directory)
 	modified:   current_update.txt
+	modified:   functions/pizza.py
 
 Untracked files:
   (use "git add <file>..." to include in what will be committed)
-	functions/printIng_models_nofunc.py
-	functions/printing_models.py
+	functions/user_profile_dict.py
 
 no changes added to commit (use "git add" and/or "git commit -a")
