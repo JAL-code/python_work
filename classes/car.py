@@ -11,6 +11,9 @@ class Car:
         self.year = year
         # Set a default value.
         self.odometer_reading = 0
+        # Set the warning level for gas refill
+        self.gas_refill = 450
+        self.max_range = 500
 
     def get_descriptive_name(self):
         """Return a neatly formatted descriptive name."""
@@ -31,9 +34,26 @@ class Car:
         else:
             print("You can not roll back the mileage.")
 
+    def update_max_range(self, refill, max_range):
+        """refill: Set the warning for when tank needs to be refilled.
+        max_range: Set the maximum range of the car.
+        """
+        if self.odometer_reading <= mileage:
+            self.odometer_reading = mileage
+        else:
+            print("You can not roll back the mileage.")
+
     def increment_odometer(self, miles):
-        """Add the given amount to the odometer reading."""
+        """Add the given amount to the odometer reading.
+        This method can used to track weekly mileage."""
         self.odometer_reading += miles
+        if miles >= self.gas_refill and miles < self.max_range:
+            self.fill_gas_tank()
+
+    def fill_gas_tank(self):
+        """ Warns the owner to get some gas if mileage added is
+        greated than 300 miles. """
+        print("Go get some gas! Your tank is low.")
 
 class ElectricCar(Car):
     "represents aspects of a car, specific to electric vehicles."""
@@ -44,6 +64,15 @@ class ElectricCar(Car):
         """Initialize attributes of the parent class (car)."""
         # super() calls methods from the parent class.
         super().__init__(make, model, year)
+        self.battery_size = 75
+
+    def describe_battery(self):
+        """Print a statement describing the battery size."""
+        print(f"This car has a {self.battery_size}-kWh battery.")
+
+    def fill_gas_tank(self):
+        """ Electric cars do not have gas tanks. """
+        print("This car does not need a gas tank.")
 
 my_new_car = Car('audi', 'a4', 2019)
 print(my_new_car.get_descriptive_name())
@@ -76,3 +105,17 @@ my_used_car.read_odometer()
 print("\nTime to make some electric cars!")
 my_tesla = ElectricCar('tesla', 'model s', '2019')
 print(my_tesla.get_descriptive_name())
+my_tesla.describe_battery()
+
+# Using the fact that electric cars do not have gas tanks
+# create a function to warn the owner when the gas tank
+# is low when updating the increment_odometer function.
+
+my_tesla.increment_odometer(300)
+my_tesla.read_odometer()
+
+my_tesla.increment_odometer(356)
+my_tesla.read_odometer()
+
+my_tesla.increment_odometer(475)
+my_tesla.read_odometer()
