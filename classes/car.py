@@ -4,9 +4,10 @@
 # - fill_gas_tank
 # - assign electric battery_size from creation of ElectricCar
 
-# Class Car is parent class.  It must appear before the child classes.
+"""A class that can be used to represent a car."""
+
 class Car:
-    """A simple attempt to represent a car."""
+    """A simple attempt to represent a car with a gas tank."""
 
     def __init__(self, make, model, year, mpg=20, range=500):
         """Initialize attributes to describe a car."""
@@ -127,54 +128,3 @@ class ElectricCar(Car):
     def fill_gas_tank(self):
         """ Electric cars do not have gas tanks. """
         print("This car does not need a gas tank.")
-
-#Use the default 500 mile range.
-my_new_car = Car('audi', 'a4', 2019)
-print(my_new_car.get_descriptive_name())
-my_new_car.tank.describe_tank()
-my_new_car.read_odometer()
-
-# Assign some mileage to the odometer.
-# Access the attribute through self and assign the value with =.
-my_new_car.odometer_reading = 23
-my_new_car.read_odometer()
-
-# Another option is to add a method that updates the value for you.
-my_new_car.update_odometer(64)
-my_new_car.read_odometer()
-
-#  Use the increment_odometer and update_odometer methods.
-my_used_car = Car('subaru', 'outback', 2015)
-print(my_used_car.get_descriptive_name())
-
-my_used_car.update_odometer(23_500)
-my_used_car.read_odometer()
-
-my_used_car.increment_odometer(100)
-my_used_car.read_odometer()
-
-my_used_car.increment_odometer(450)
-my_used_car.read_odometer()
-
-# Attempt to rollback the odometer
-my_used_car.update_odometer(20_000)
-my_used_car.read_odometer()
-
-# Let us expand the Car class as a parent of the Electric Car class.
-print("\nTime to make some electric cars!")
-print("Create the electric car with default battery")
-my_tesla = ElectricCar('tesla', 'model s', '2019')
-print(my_tesla.get_descriptive_name())
-#look at the my_tesla object, get attribute battery, call method describe_battery
-my_tesla.battery.describe_battery()
-my_tesla.battery.get_range()
-print("Wrong battery size!")
-my_tesla.battery.set_battery_size(100)
-
-print("Create the electric car with 100 kWh battery.")
-my_tesla = ElectricCar('tesla', 'model s', '2019', battery_size=100)
-my_tesla.battery.describe_battery()
-
-# Using the fact that electric cars do not have gas tanks
-# create a function to warn the owner when the gas tank
-# is low when updating the increment_odometer function.
