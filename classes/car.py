@@ -1,5 +1,6 @@
 # Python Crash Course: Chapter 8, Eric Matthews, Classes
 
+# Class Car is parent class.  It must appear before the child classes.
 class Car:
     """A simple attempt to represent a car."""
 
@@ -34,6 +35,16 @@ class Car:
         """Add the given amount to the odometer reading."""
         self.odometer_reading += miles
 
+class ElectricCar(Car):
+    "represents aspects of a car, specific to electric vehicles."""
+    #  This class will inherit the attributes and methods of
+    #  an car and then additional characterics.
+
+    def __init__(self, make, model, year):
+        """Initialize attributes of the parent class (car)."""
+        # super() calls methods from the parent class.
+        super().__init__(make, model, year)
+
 my_new_car = Car('audi', 'a4', 2019)
 print(my_new_car.get_descriptive_name())
 my_new_car.read_odometer()
@@ -60,3 +71,8 @@ my_used_car.read_odometer()
 # Attempt to rollback the odometer
 my_used_car.update_odometer(20_000)
 my_used_car.read_odometer()
+
+# Let us expand the Car class as a parent of the Electric Car class.
+print("\nTime to make some electric cars!")
+my_tesla = ElectricCar('tesla', 'model s', '2019')
+print(my_tesla.get_descriptive_name())
