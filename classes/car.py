@@ -55,6 +55,26 @@ class Car:
         greated than 300 miles. """
         print("Go get some gas! Your tank is low.")
 
+class Battery:
+    """A simple attempt to model a battery for an electric car."""
+
+    def __init__(self, battery_size=75):
+        """Initialize the battery's attributes"""
+        self.battery_size = battery_size
+
+    def describe_battery(self):
+        """Print a statement describing the battery size."""
+        print(f"This car has a {self.battery_size}-kWh battery.")
+
+    def get_range(self):
+        """Print a statement about the range this battery provides."""
+        if self.battery_size == 75:
+            range = 260
+        elif self.battery_size == 100:
+            range = 315
+
+        print(f"This car can go about {range} miles on a full charge.")
+
 class ElectricCar(Car):
     "represents aspects of a car, specific to electric vehicles."""
     #  This class will inherit the attributes and methods of
@@ -64,11 +84,14 @@ class ElectricCar(Car):
         """Initialize attributes of the parent class (car)."""
         # super() calls methods from the parent class.
         super().__init__(make, model, year)
-        self.battery_size = 75
+        # Replace this line --> self.battery_size = 75 <-- with the
+        # following line to create a Battery object.
+        # The object is an attribute of the electric car.
+        # The command also creates the instance of a battery
+        # associated with the electric car.
+        self.battery = Battery()
 
-    def describe_battery(self):
-        """Print a statement describing the battery size."""
-        print(f"This car has a {self.battery_size}-kWh battery.")
+# Remove the describe_battery method and place it in the Battery class.
 
     def fill_gas_tank(self):
         """ Electric cars do not have gas tanks. """
@@ -105,7 +128,9 @@ my_used_car.read_odometer()
 print("\nTime to make some electric cars!")
 my_tesla = ElectricCar('tesla', 'model s', '2019')
 print(my_tesla.get_descriptive_name())
-my_tesla.describe_battery()
+#look at the my_tesla object, get attribute battery, call method describe_battery
+my_tesla.battery.describe_battery()
+my_tesla.battery.get_range()
 
 # Using the fact that electric cars do not have gas tanks
 # create a function to warn the owner when the gas tank
