@@ -20,6 +20,8 @@ All histories of each file will be:
     - Visio Studio Code: test files.
 
 7. Linux Mint environment
-    - Terminal: pull/push files with commits
+    - Terminal
+        -pull/push files with commits.
+        -VIM/Nano to commit changes
     - MU or Nano: test files.
     - Sublime: test files.  Requires activation, hence use MU, which is free.
