@@ -1,18 +1,17 @@
 On branch main
-Your branch is up to date with 'origin/main'.
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
 
 Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
   (use "git restore <file>..." to discard changes in working directory)
 	modified:   current_update.txt
+	modified:   files_and_exceptions/__pycache__/access.cpython-38.pyc
+	modified:   files_and_exceptions/access.py
+	modified:   files_and_exceptions/file_reader.py
 
 Untracked files:
   (use "git add <file>..." to include in what will be committed)
-	files_and_exceptions/__pycache__/
-	files_and_exceptions/access.py
-	files_and_exceptions/current_update.txt
-	files_and_exceptions/file_reader.py
-	files_and_exceptions/pi_digits.txt
-	push_update.sh
+	files_and_exceptions/pi_million_digits.txt
 
 no changes added to commit (use "git add" and/or "git commit -a")
