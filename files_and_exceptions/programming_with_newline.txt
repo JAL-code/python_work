@@ -1,0 +1,7 @@
+I love programming.
+I love creating new games.
+
+	Asteriods
+	Defender
+I love working with large datasets.
+Also, I love creating apps that can run in a browser.
