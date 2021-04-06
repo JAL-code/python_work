@@ -1,14 +1,11 @@
 On branch main
-Your branch is ahead of 'origin/main' by 2 commits.
+Your branch is ahead of 'origin/main' by 1 commit.
   (use "git push" to publish your local commits)
 
 Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
   (use "git restore <file>..." to discard changes in working directory)
 	modified:   current_update.txt
-	modified:   testing_your_code/__pycache__/name_function.cpython-38.pyc
-	modified:   testing_your_code/name_function.py
-	modified:   testing_your_code/names.py
-	modified:   testing_your_code/test_name_function.py
+	modified:   testing_your_code/test_survey.py
 
 no changes added to commit (use "git add" and/or "git commit -a")
