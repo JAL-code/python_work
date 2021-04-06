@@ -1,5 +1,5 @@
 On branch main
-Your branch is ahead of 'origin/main' by 1 commit.
+Your branch is ahead of 'origin/main' by 2 commits.
   (use "git push" to publish your local commits)
 
 Changes not staged for commit:
@@ -9,5 +9,6 @@ Changes not staged for commit:
 	modified:   testing_your_code/__pycache__/name_function.cpython-38.pyc
 	modified:   testing_your_code/name_function.py
 	modified:   testing_your_code/names.py
+	modified:   testing_your_code/test_name_function.py
 
 no changes added to commit (use "git add" and/or "git commit -a")

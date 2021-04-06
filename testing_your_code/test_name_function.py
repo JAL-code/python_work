@@ -25,7 +25,15 @@ class NamesTestCase(unittest.TestCase):
         # verify the result matches intended output.
         self.assertEqual(formatted_name, 'Janis Joplin')
 
+     # add new case to test for middle name
+    def test_first_middle_last_name(self):
+        """Do names like 'Fred Freddy Fredmond' work?"""
+        formatted_name = get_formatted_name('fred', 'fredmond', 'freddy')
+        # verify the result matches intended output.
+        self.assertEqual(formatted_name, 'Fred Freddy Fredmond')
+
 # lets python3 identify this file as the main program.
 if __name__ == '__main__':
     # Allows unittest to excute the test code.
-    unittest.main()
+    # Add exit=False to prevent none critical SystemExit error.
+    unittest.main(exit=False)
