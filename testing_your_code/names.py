@@ -11,8 +11,12 @@ while True:
         break
     last = input("Please give me a last name: ")
     # User can q at anytime while entering last name.
+    if middle == 'q':
+        break
+    middle = input("Please give me a last name: ")
+    # User can q at anytime while entering last name.
     if last == 'q':
         break
 
-    formatted_name = get_formatted_name(first, last)
+    formatted_name = get_formatted_name(first, middle, last)
     print(f"\tNeatly formatted name: {formatted_name}.")
