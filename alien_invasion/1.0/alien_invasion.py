@@ -19,12 +19,9 @@ class AlienInvasion:
 
         # Set the background color
         self.bg_color = (230, 230, 230)
-        # Use full screen
-        #self.screen = pygame.display.set_mode((0,0), pygame.FULLSCREEN)
-        #self.settings.screen_width = self.screen.get_rect().width
-        #self.settings.screen_height = self.screen.get_rect().height
-        
+        # Set the screen mode - Minimize or Max
         self.screen = pygame.display.set_mode((1200, 800))
+        # Use full screen
         versiontitle = f"README.mdvasion {self.version}"
         pygame.display.set_caption(versiontitle)
 
@@ -61,6 +58,14 @@ class AlienInvasion:
         elif event.key == pygame.K_q:
             pygame.quit()
             sys.exit()
+        elif event.key == pygame.K_v:
+            self.screen = pygame.display.set_mode((1200, 800))
+        elif event.key == pygame.K_f:
+            self.screen = pygame.display.set_mode((0,0), pygame.FULLSCREEN)
+            self.settings.screen_width = self.screen.get_rect().width
+            print(self.screen.get_rect().width) # 1920
+            self.settings.screen_height = self.screen.get_rect().height
+            print(self.screen.get_rect().height) # 1080
 
     def _check_keyup_events(self, event):
         """Respond to key releases"""
