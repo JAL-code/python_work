@@ -15,13 +15,17 @@ class AlienInvasion:
         self.version = "1.0"
 
         self.screen = pygame.display.set_mode(
-            (self.settings.screen_width, self.settings.screen_height))
+          (self.settings.screen_width, self.settings.screen_height))
 
         # Set the background color
         self.bg_color = (230, 230, 230)
-
+        # Use full screen
+        #self.screen = pygame.display.set_mode((0,0), pygame.FULLSCREEN)
+        #self.settings.screen_width = self.screen.get_rect().width
+        #self.settings.screen_height = self.screen.get_rect().height
+        
         self.screen = pygame.display.set_mode((1200, 800))
-        versiontitle = f"Alien Invasion {self.version}"
+        versiontitle = f"README.mdvasion {self.version}"
         pygame.display.set_caption(versiontitle)
 
         self.ship = Ship(self)
@@ -41,20 +45,31 @@ class AlienInvasion:
                 pygame.quit() # Added to avoid hang bug.
                 sys.exit()
             elif event.type == pygame.KEYDOWN:
-                if event.key == pygame.K_RIGHT:
-                    # Move the ship to the right.
-                    self.ship.rect.x += 1
-                elif event.key == pygame.K_LEFT:
-                    # Move the ship to the left.
-                    self.ship.rect.x -= 1
-                    
+                self._check_keydown_events(event)
             elif event.type == pygame.KEYUP:
-                if event.key == pygame.K_RIGHT:
-                    #Stop moving right
-                    self.ship.moving_right = False
-                elif event.key == pygame.K_LEFT:
-                    #Stop moving right
-                    self.ship.moving_left = False
+                self._check_keyup_events(event)
+
+
+    def _check_keydown_events(self, event):
+        """Respond to keypresses."""
+        if event.key == pygame.K_RIGHT:
+            #Start moving right
+            self.ship.moving_right = True
+        elif event.key == pygame.K_LEFT:
+            #Start moving left 
+            self.ship.moving_left = True
+        elif event.key == pygame.K_q:
+            pygame.quit()
+            sys.exit()
+
+    def _check_keyup_events(self, event):
+        """Respond to key releases"""
+        if event.key == pygame.K_RIGHT:
+            #Stop moving right
+            self.ship.moving_right = False
+        elif event.key == pygame.K_LEFT:
+            #Stop moving left 
+            self.ship.moving_left = False        
 
     def _update_screen(self):
         """Helper method: Update images on the screen,
