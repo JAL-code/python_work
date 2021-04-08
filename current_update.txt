@@ -1,10 +1,18 @@
 On branch main
-Your branch is up to date with 'origin/main'.
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
 
 Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
   (use "git restore <file>..." to discard changes in working directory)
+	modified:   alien_invasion/1.0/__pycache__/settings.cpython-38.pyc
 	modified:   alien_invasion/1.0/alien_invasion.py
+	modified:   alien_invasion/1.0/settings.py
 	modified:   current_update.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	alien_invasion/1.0/__pycache__/bullet.cpython-38.pyc
+	alien_invasion/1.0/bullet.py
 
 no changes added to commit (use "git add" and/or "git commit -a")
