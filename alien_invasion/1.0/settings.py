@@ -18,10 +18,10 @@ class Settings:
 
         # Alien settings
         # Control the speed
-        self.alien_speed = 1.0
+        self.alien_speed = 5.0  # was 1.0
 
         # Bullet settings
-        self.bullet_speed = 1.5
+        self.bullet_speed = 3  # was 1.5
         if self.bonus:
             self.bullet_width = 300
         else:
