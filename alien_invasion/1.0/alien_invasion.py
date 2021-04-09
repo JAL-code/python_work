@@ -137,6 +137,12 @@ class AlienInvasion:
         collisions = pygame.sprite.groupcollide(
             self.bullets, self.aliens, True, True)
 
+        # Repopulate the alien fleet if no aliens remaining.
+        if not self.aliens:
+            #Destroy exiting bullets and create new fleet.
+            self.bullets.empty()
+            self._create_fleet()
+
     def _update_aliens(self):
         """
         Check if the fleet is at an edge,
