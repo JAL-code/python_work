@@ -18,7 +18,7 @@ class Settings:
 
         # Alien settings
         # Control the speed
-        self.alien_speed = 5.0 # Was 1.0
+        self.alien_speed = 1.0
 
         # Bullet settings
         self.bullet_speed = 1.5
