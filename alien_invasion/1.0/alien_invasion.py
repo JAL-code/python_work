@@ -189,6 +189,7 @@ class AlienInvasion:
                 self.stats.score += self.settings.alien_points * len(aliens)
             print(f"Check score: {self.stats.score}")
             self.sb.prep_score()
+            self.sb.check_high_score()
 
         # Repopulate the alien fleet if no aliens remaining.
         if not self.aliens:
