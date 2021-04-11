@@ -1,12 +1,17 @@
 # Must import pygame for this module.
 import pygame
+# So we can create a fleet of player ships
+from pygame.sprite import Sprite
 
 
-class Ship:
+class Ship(Sprite):
     """A class to manage the ship."""
 
     def __init__(self, ai_game):
         """Initialize the ship and set its starting position."""
+        # So ship inherits from Sprite class
+        super().__init__()
+        
         self.screen = ai_game.screen
         self.screen_rect = ai_game.screen.get_rect()
         self.location = f"images/ship.bmp"
