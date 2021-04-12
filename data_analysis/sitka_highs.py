@@ -32,8 +32,10 @@ plt.style.use('seaborn')
 fig, ax = plt.subplots() #figsize=(10, 6), dpi=128
 
 # smaller size for more values and set point color
-ax.plot(dates, highs, c='red') 
-ax.plot(dates, lows, c='blue') 
+ax.plot(dates, highs, c='red', alpha=0.5) 
+ax.plot(dates, lows, c='blue', alpha=0.5)
+ax.fill_between(dates, highs, lows, facecolor='blue', alpha=0.1)
+
 # Set chart title and label axis.
 ax.set_title("Daily high and low temperatures, 2018", fontsize=24)
 ax.set_xlabel('', fontsize=16)
