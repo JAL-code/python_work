@@ -1,4 +1,8 @@
 import csv
+from datetime import datetime
+# %A - Weekday, %B Month, %m Month 2 digit, %d Day number
+# %Y - Year, 4dgt, %y 4 digit,
+# %H 24Hr, %I 12hr, %p AM/PM, %M Minutes, %S Seconds
 
 import matplotlib.pyplot as plt
 
@@ -12,9 +16,11 @@ with open(filename) as f:
     # for index, column_header in enumerate(header_row):
     #    print(f"{index}, {column_header}")
     # Get high temperatures, column 5, from this file.
-    highs = []
+    dates, highs = [], []
     for row in reader:
+        current_date = datetime.strptime(row[2], '%Y-%m-%d')
         high = int(row[5])
+        dates.append(current_date)
         highs.append(high)
 
 # print(highs) # print to output.
@@ -22,11 +28,12 @@ with open(filename) as f:
 plt.style.use('seaborn')
 fig, ax = plt.subplots() #figsize=(10, 6), dpi=128
 # smaller size for more values and set point color
-ax.plot(highs, c='red') 
+ax.plot(dates, highs, c='red') 
 
 # Set chart title and label axis.
 ax.set_title("Daily high temperatures, July 2018", fontsize=24)
 ax.set_xlabel('', fontsize=16)
+fig.autofmt_xdate()
 ax.set_ylabel("Temperature (F)", fontsize=16)
 
 # Set size of tick labels.
