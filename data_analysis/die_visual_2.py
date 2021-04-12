@@ -5,11 +5,11 @@ from die import Die
 
 # Create a D6
 die_1 = Die()
-die_2 = Die()
+die_2 = Die(10)
 
 # Make some rolls, and store result in a list.
 results = []
-for roll_num in range(1000):
+for roll_num in range(50_000):
     result = die_1.roll() + die_2.roll()
     results.append(result)
 # Analyze the results.
