@@ -1,14 +1,16 @@
 On branch main
-Your branch is ahead of 'origin/main' by 13 commits.
+Your branch is ahead of 'origin/main' by 14 commits.
   (use "git push" to publish your local commits)
 
 Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
   (use "git restore <file>..." to discard changes in working directory)
 	modified:   current_update.txt
-	modified:   data_analysis/rw_visual.py
-	modified:   data_analysis/scatter_squares.py
-	modified:   data_analysis/setup.txt
-	modified:   data_analysis/squares_plot_green.png
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	data_analysis/__pycache__/die.cpython-38.pyc
+	data_analysis/die.py
+	data_analysis/die_visual.py
 
 no changes added to commit (use "git add" and/or "git commit -a")
