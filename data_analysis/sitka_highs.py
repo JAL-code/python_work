@@ -17,22 +17,25 @@ with open(filename) as f:
     # for index, column_header in enumerate(header_row):
     #    print(f"{index}, {column_header}")
     # Get high temperatures, column 5, from this file.
-    dates, highs = [], []
+    dates, highs, lows = [], [], []
     for row in reader:
         current_date = datetime.strptime(row[2], '%Y-%m-%d')
         high = int(row[5])
+        low = int(row[6])
         dates.append(current_date)
         highs.append(high)
-
-# print(highs) # print to output.
+        lows.append(low)
+        
+# print(highs, lows) # print to output.
 
 plt.style.use('seaborn')
 fig, ax = plt.subplots() #figsize=(10, 6), dpi=128
+
 # smaller size for more values and set point color
 ax.plot(dates, highs, c='red') 
-
+ax.plot(dates, lows, c='blue') 
 # Set chart title and label axis.
-ax.set_title("Daily high temperatures, 2018", fontsize=24)
+ax.set_title("Daily high and low temperatures, 2018", fontsize=24)
 ax.set_xlabel('', fontsize=16)
 fig.autofmt_xdate()
 ax.set_ylabel("Temperature (F)", fontsize=16)
