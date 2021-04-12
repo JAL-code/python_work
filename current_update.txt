@@ -1,5 +1,5 @@
 On branch main
-Your branch is ahead of 'origin/main' by 12 commits.
+Your branch is ahead of 'origin/main' by 13 commits.
   (use "git push" to publish your local commits)
 
 Changes not staged for commit:
@@ -7,5 +7,8 @@ Changes not staged for commit:
   (use "git restore <file>..." to discard changes in working directory)
 	modified:   current_update.txt
 	modified:   data_analysis/rw_visual.py
+	modified:   data_analysis/scatter_squares.py
+	modified:   data_analysis/setup.txt
+	modified:   data_analysis/squares_plot_green.png
 
 no changes added to commit (use "git add" and/or "git commit -a")

@@ -4,7 +4,7 @@ x_values = range(1, 1000)
 y_values = [x**2 for x in x_values]
 
 plt.style.use('seaborn')
-fig, ax = plt.subplots()
+fig, ax = plt.subplots(figsize=(10, 6), dpi=128)
 # smaller size for more values and set point color
 ax.scatter(x_values, y_values, c=y_values, cmap=plt.cm.Blues, s=10) 
 
