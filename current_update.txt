@@ -1,26 +1,15 @@
 On branch main
-Your branch is ahead of 'origin/main' by 1 commit.
+Your branch is ahead of 'origin/main' by 2 commits.
   (use "git push" to publish your local commits)
-
-Changes to be committed:
-  (use "git restore --staged <file>..." to unstage)
-	modified:   current_update.txt
-	new file:   data_analysis/death_valley_highs_lows.py
-	new file:   data_analysis/death_valley_test_highs_and_lows.py
-	new file:   data_analysis/print_highs_and_lows.png
-	modified:   data_analysis/sitka_highs.py
-	new file:   data_analysis/sitka_highs_and_lows.py
 
 Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
   (use "git restore <file>..." to discard changes in working directory)
 	modified:   current_update.txt
+	modified:   data_analysis/eq_explore_data_2021.py
 
 Untracked files:
   (use "git add <file>..." to include in what will be committed)
-	data_analysis/data/2-5_day.geojson
-	data_analysis/data/world_fires_1_day.csv
-	data_analysis/data/world_fires_7_day.csv
-	data_analysis/eq_explore_data.py
-	data_analysis/eq_explore_data_2021.py
+	data_analysis/global_earthquakes.html
 
+no changes added to commit (use "git add" and/or "git commit -a")

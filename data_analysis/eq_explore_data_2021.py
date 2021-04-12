@@ -1,5 +1,8 @@
 import json
 
+from plotly.graph_objs import Scattergeo, Layout
+from plotly import offline
+
 test_data = False
 
 # Explore the structure of the data.
@@ -15,7 +18,8 @@ if test_data:
 
 # Take all data in stored in features.
 all_eq_dicts = all_eq_data['features']
-print(len(all_eq_dicts))
+if test_data:
+    print(len(all_eq_dicts))
 
 # Extract the magnitude of earthquakes
 mags = []
@@ -28,7 +32,28 @@ for eq_dict in all_eq_dicts:
     lons.append(lon)
     lats.append(lat)
 
-print(mags[:10])
-print(lons[:10])
-print(lats[:10])
+# Check the first 10 items.
+if test_data:
+    print(mags[:10])
+    print(lons[:10])
+    print(lats[:10])
+
+if test_data:
+    data = [Scattergeo(lon=lons, lat = lats)]
+else:
+    # Print data: type, lon, lat (first example)
+    # Print data: mags - format magnitude to show earthquake size.
+    data = [{
+        'type': 'scattergeo',
+        'lon': lons,
+        'lat': lats,
+        'marker': {
+            'size': [5*mag for mag in mags],
+        },
+        
+    }]
+my_layout = Layout(title='Global Earthquakes')
+
+fig = {'data': data, 'layout': my_layout}
+offline.plot(fig, filename='global_earthquakes.html')
     
