@@ -6,7 +6,7 @@ y_values = [x**2 for x in x_values]
 plt.style.use('seaborn')
 fig, ax = plt.subplots()
 # smaller size for more values and set point color
-ax.scatter(x_values, y_values, c='red', s=10) 
+ax.scatter(x_values, y_values, c=(0, 0.8, 0), s=10) 
 
 # Set chart title and label axis.
 ax.set_title("Long List of Square Numbers", fontsize=14)
