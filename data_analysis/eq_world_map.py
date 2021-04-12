@@ -24,13 +24,16 @@ if test_data:
 # Extract the magnitude of earthquakes
 mags = []
 lons, lats = [], []
+hover_texts = []
 for eq_dict in all_eq_dicts:
     mag = eq_dict['properties']['mag']
     lon = eq_dict['geometry']['coordinates'][0]
     lat = eq_dict['geometry']['coordinates'][1]
+    title = eq_dict['properties']['title']
     mags.append(mag)
     lons.append(lon)
     lats.append(lat)
+    hover_texts.append(title)
 
 # Check the first 10 items.
 if test_data:
@@ -47,6 +50,7 @@ else:
         'type': 'scattergeo',
         'lon': lons,
         'lat': lats,
+        'text': hover_texts,
         'marker': {
             'size': [5*mag for mag in mags],
             'color': mags,
