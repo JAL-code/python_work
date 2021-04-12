@@ -1,5 +1,5 @@
 On branch main
-Your branch is ahead of 'origin/main' by 8 commits.
+Your branch is ahead of 'origin/main' by 9 commits.
   (use "git push" to publish your local commits)
 
 Changes not staged for commit:
@@ -10,6 +10,7 @@ Changes not staged for commit:
 
 Untracked files:
   (use "git add <file>..." to include in what will be committed)
-	data_analysis/long_list_of_scatter_squares_w_rgb_color.png
+	data_analysis/long_list_of_scatter_squares_w_green_colormap.png
+	data_analysis/squares_plot_green.png
 
 no changes added to commit (use "git add" and/or "git commit -a")
